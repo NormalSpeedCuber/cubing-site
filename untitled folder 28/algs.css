@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    color: cyan;
+}
+
+button {
+    background-color: cyan;
+}
+
+input {
+    background-color: cyan;
+}
+
+#puzzles {
+    border-style: solid;
+}
+
+#options {
+    border-style: solid;
+}
+
+twisty-player {
+    width: 475pt;
+}

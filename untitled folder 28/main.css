@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: cyan;
+}
+
+hr {
+    border-color: cyan;
+}
+
+#coolstuff {
+    border-style: ridge;
+    border-color: cyan;
+}

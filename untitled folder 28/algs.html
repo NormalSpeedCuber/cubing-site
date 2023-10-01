@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms!</title>
+    <script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script>
+    <link rel="stylesheet" href="algs.css">
+    <style>
+        #textEl {
+            display: none;
+        }
+
+        #algorithm {
+            display: none;
+        }
+
+        #oneElement {
+            display: none;
+        }
+
+        #twoElement {
+            display: none;
+        }
+
+        #threeElement {
+            display: none;
+        }
+
+        #fourElement {
+            display: none;
+        }
+    </style>
+    <link rel="icon" href="tomato.jpeg">
+</head>
+<body>
+
+    <h3>Options:</h3>
+    <div id="options">
+        <button onclick="toggleVisibility()">Algorithm</button>
+        <button onclick="toggleHints()">Hint Facelets</button>
+        <button onclick="backview()">Back View</button>
+        <button onclick="toggleViz()">Vizualization</button>
+        <br>
+        <button onclick="setupToggle()">Setup Algorithm</button>
+    </div>
+
+    <h3 id="oneElement">Hint Facelets: <button onclick="faceon()">On</button><button onclick="faceoff()">Off</button>
+    <br>
+    </h3>
+
+    <h3 id="twoElement">Back View: <button onclick="backviewone()">Side by Side</button><button onclick="backviewtwo()">Top - Right</button><button onclick="backviewthree()">None</button>
+    <br>
+    </h3>
+
+    <h3 id="threeElement">Vizualization: <button onclick="viztwod()">2D</button><button onclick="vizthreed()">3D</button><button onclick="viztwodll()">2D-LL</button><button onclick="vizpgthreed()">PG3D</button>
+    <br>
+    </h3>
+
+    <h3 id="fourElement">
+    <label for="fourOneElement" id="idk">Setup:</label>
+    <input type="text" id="fourOneElement">
+    </h3>
+
+    <h3>Puzzles:</h3>
+    <div id="puzzles">
+        <button onclick="pzltwo()">2x2x2</button>
+        <button onclick="pzlthree()">3x3x3</button>
+        <button onclick="pzlfour()">4x4x4</button>
+        <button onclick="pzlfive()">5x5x5</button>
+        <br>
+        <button onclick="pzlsix()">6x6x6</button>
+        <button onclick="pzlseven()">7x7x7</button>
+        <button onclick="pzlclock()">Clock</button>
+        <button onclick="pzlmega()">Megaminx</button>
+        <button onclick="pzlpyra()">Pyraminx</button>
+        <button onclick="pzlskewb()">Skewb</button>
+        <br>
+        <button onclick="pzlsqr()">Square-1</button>
+        <button onclick="pzlgiga()">Gigaminx</button>
+        <button onclick="pzlfto()">Face Turning Octahedron</button>
+        <br>
+        <button onclick="pzlmstrtetra()">Master Tetraminx</button>
+        <button onclick="pzlkilo()">Kilominx</button>
+        <button onclick="pzlredi()">Redi Cube</button>
+        <button onclick="pzlmeli()">Melinda's 2x2x2x2</button>
+    </div>
+    <br>
+    <br>
+
+    <label for="algorithm" id="textEl">Enter algorithm:</label>
+    <input type="text" id="algorithm">
+    <br>
+    
+    <twisty-player 
+    id="myTwistyPlayer"
+    viewer-link="none"
+    ></twisty-player>
+
+    <script>
+        function setAlgorithm() {
+            var algorithmInput = document.getElementById('algorithm').value;
+
+            document.getElementById('myTwistyPlayer').setAttribute('alg', algorithmInput);
+        }
+
+        document.getElementById('algorithm').addEventListener('input', setAlgorithm);
+    </script>
+
+<script>
+    function toggleVisibility() {
+        var inputElement = document.getElementById('algorithm');
+        var textElement = document.getElementById('textEl');
+
+        inputElement.style.display = (inputElement.style.display === 'none') ? 'block' : 'none';
+        textEl.style.display = (textElement.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+<script>
+    function pzltwo() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', '2x2x2');
+    }
+</script>
+
+<script>
+    function pzlthree() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', '3x3x3');
+    }
+</script>
+
+<script>
+    function pzlfour() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', '4x4x4');
+    }
+</script>
+
+<script>
+    function pzlfive() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', '5x5x5');
+    }
+</script>
+
+<script>
+    function pzlsix() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', '6x6x6');
+    }
+</script>
+
+<script>
+    function pzlseven() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', '7x7x7');
+    }
+</script>
+
+<script>
+    function pzlclock() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'clock');
+    }
+</script>
+
+<script>
+    function pzlmega() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'megaminx');
+    }
+</script>
+
+<script>
+    function pzlpyra() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'pyraminx');
+    }
+</script>
+
+<script>
+    function pzlskewb() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'skewb');
+    }
+</script>
+
+<script>
+    function pzlsqr() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'square1');
+    }
+</script>
+
+<script>
+    function pzlgiga() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'gigaminx');
+    }
+</script>
+
+<script>
+    function pzlfto() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'fto');
+    }
+</script>
+
+<script>
+    function pzlmstrtetra() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'master_tetraminx');
+    }
+</script>
+
+<script>
+    function pzlkilo() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer')
+
+        twistyPlayer.setAttribute('puzzle', 'kilominx');
+    }
+</script>
+
+<script>
+    function pzlredi() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'redi_cube');
+    }
+</script>
+
+<script>
+    function pzlmeli() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('puzzle', 'melindas2x2x2x2');
+    }
+</script>
+
+<script>
+    function toggleHints() {
+        var oneElement = document.getElementById('oneElement');
+
+        oneElement.style.display = (oneElement.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+<script>
+    function faceon() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('hint-facelets', 'floating');
+    }
+</script>
+
+<script>
+    function faceoff() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('hint-facelets', 'none');
+    }
+</script>
+
+<script>
+    function backview() {
+        var twoElement = document.getElementById('twoElement');
+
+        twoElement.style.display = (twoElement.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+<script>
+    function backviewone() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('back-view', 'side-by-side');
+    }
+</script>
+
+<script>
+    function backviewtwo() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('back-view', 'top-right');
+    }
+</script>
+
+<script>
+    function backviewthree() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('back-view', 'none');
+    }
+</script>
+
+<script>
+    function toggleViz() {
+        var threeElement = document.getElementById('threeElement');
+
+        threeElement.style.display = (threeElement.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+<script>
+    function viztwod() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('vizualization', '2D');
+    }
+</script>
+
+<script>
+    function vizthreed() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('vizualization', '3D');
+    }
+</script>
+
+<script>
+    function viztwodll() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('vizualization', 'experimental-2D-LL');
+    }
+</script>
+
+<script>
+    function vizpgthreed() {
+        var twistyPlayer = document.getElementById('myTwistyPlayer');
+
+        twistyPlayer.setAttribute('vizualization', 'PG3D');
+    }
+</script>
+
+<script>
+    function setupToggle() {
+        var fourElement = document.getElementById('fourElement');
+
+        fourElement.style.display = (fourElement.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+<script>
+    function setSetup() {
+        var fourOneElement = document.getElementById('fourOneElement').value;
+
+        document.getElementById('myTwistyPlayer').setAttribute('experimental-setup-alg', fourOneElement)
+    }
+
+    document.getElementById('fourOneElement').addEventListener('input', setSetup);
+</script>
+
+</body>
+</html>
