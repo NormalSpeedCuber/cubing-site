@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry!</title>
+    <link rel="stylesheet" href="alg.css">
+    <style>
+
+        #tetrahedron {
+            display: none;
+        }
+
+        #cube {
+            display: none;
+        }
+
+        #octahedron {
+            display: none;
+        }
+
+        #dodecahedron {
+            display: none;
+        }
+
+        #icosahedron {
+            display: none;
+        }
+        #truncatedtetra {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Explore Polyhedra!</h1>
+
+    <label>Regular</label>
+    <div id="polyhedra">
+        <button onclick="showtetra()">Tetrahedron</button>
+        <button onclick="showcube()">Cube</button>
+        <button onclick="showocta()">Octahedron</button>
+        <button onclick="showdodeca()">Dodecahedron</button>
+        <button onclick="showicosa()">Icosahedron</button>
+    </div>
+    <br>
+
+    <label>Truncated</label>
+    <div id="polyhedra">
+        <button onclick="showttetra()">Truncated Tetrahedron</button>
+        <button onclick="showtcube()">Truncated Cube</button>
+    </div>
+
+    <div id="tetrahedron">
+        <iframe src="https://polyhedra.tessera.li/tetrahedron/full" width="627" height="627"></iframe>
+    </div>
+    <div id="cube">
+        <iframe src="https://polyhedra.tessera.li/cube/operations" width="627" height="627"></iframe>
+    </div>
+    <div id="octahedron">
+        <iframe src="https://polyhedra.tessera.li/octahedron/operations" width="627" height="627"></iframe>
+    </div>
+    <div id="dodecahedron">
+        <iframe src="https://polyhedra.tessera.li/dodecahedron/operations" width="627" height="627"></iframe>
+    </div>
+    <div id="icosahedron">
+        <iframe src="https://polyhedra.tessera.li/icosahedron/operations" width="627" height="627"></iframe>
+    </div>
+
+    <div id="truncatedtetra">
+        <iframe src="https://polyhedra.tessera.li/truncated-tetrahedron/operations" width="627" height="627"></iframe>
+    </div>
+
+    <script>
+        function showtetra() {
+            var tetrabox = document.getElementById("tetrahedron");
+
+            tetrabox.style.display = (tetrabox.style.display === "none") ? "block" : "none";
+        }
+    </script>
+
+    <script>
+        function showcube() {
+            var cubebox = document.getElementById("cube");
+
+            cubebox.style.display = (cubebox.style.display === "none") ? "block" : "none";
+        }
+    </script>
+
+    <script>
+        function showocta() {
+            var octabox = document.getElementById("octahedron");
+
+            octabox.style.display = (octabox.style.display === "none") ? "block" : "none";
+        }
+    </script>
+
+    <script>
+        function showdodeca() {
+            var dodecabox = document.getElementById("dodecahedron");
+
+            dodecabox.style.display = (dodecabox.style.display === "none") ? "block" : "none";
+        }
+    </script>
+
+    <script>
+        function showicosa() {
+            var icosabox = document.getElementById("icosahedron");
+
+            icosabox.style.display = (icosabox.style.display === "none") ? "block" : "none";
+        }
+    </script>
+
+    <script>
+        function showttetra() {
+            var ttetrabox = document.getElementById("truncatedtetra");
+
+            ttetrabox.style.display = (ttetrabox.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
