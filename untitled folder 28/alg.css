@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+    color: cyan;
+}
+
+button {
+    background-color: cyan;
+}
+
+#polyhedra {
+    border-style: solid;
+}
